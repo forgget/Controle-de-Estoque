@@ -32,10 +32,10 @@ loginForm.addEventListener('submit', function(e) {
     
     console.log('Tentativa de login:', email, senha); // Debug log
     
-    if (email === 'admin' && senha === 'admin') {
+    if (email === 'admin@exemplo.com' && senha === 'admin') {
         console.log('Credenciais corretas, redirecionando para: main.html');
         try {
-            window.location.href = 'main.html'; // Modificado para caminho relativo simples
+            window.location.href = 'incio.html';
         } catch (error) {
             console.error('Erro ao redirecionar:', error);
             alert('Erro ao redirecionar para a página principal.');

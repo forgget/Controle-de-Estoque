@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentações - Papelaria Ibaté</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="movimento.css">
+    <script src="movimento.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13"></path>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                    </svg>
+                    <span class="logo-text">Papelaria Ibaté</span>
+                </div>
+            </div>
+            <div class="divider"></div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="incio.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span>Tela Inicial</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="main.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="movimento.html" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                            <span>Movimento</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                                <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                            </svg>
+                            <span>Cadastros</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                            <span>Cadastrar</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="content">
+            <div class="welcome-section">
+                <h1>Movimentações de Estoque</h1>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="filters-section">
+                <div class="section-header">
+                    <h3>Filtros</h3>
+                </div>
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="date-start">Data Inicial</label>
+                        <input type="date" id="date-start" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-end">Data Final</label>
+                        <input type="date" id="date-end" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="movement-type">Tipo</label>
+                        <select id="movement-type" class="filter-input">
+                            <option value="all">Todos</option>
+                            <option value="entry">Entrada</option>
+                            <option value="exit">Saída</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="product">Produto</label>
+                        <input type="text" id="product" class="filter-input" placeholder="Filtrar por produto">
+                    </div>
+                    <div class="filter-buttons">
+                        <button id="apply-filter" class="button blue-bg">Aplicar</button>
+                        <button id="clear-filter" class="button gray-bg">Limpar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Movimentações -->
+            <div class="movements-section">
+                <div class="section-header">
+                    <h3>Movimentações</h3>
+                    <div class="header-actions">
+                        <button id="new-entry" class="button green-bg">Nova Entrada</button>
+                        <button id="new-exit" class="button red-bg">Nova Saída</button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="movements-table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Código</th>
+                                <th>Produto</th>
+                                <th>Tipo</th>
+                                <th>Quantidade</th>
+                                <th>Valor Unit.</th>
+                                <th>Valor Total</th>
+                                <th>Responsável</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="movements-list">
+                            <tr class="entry-row">
+                                <td>14/04/2025</td>
+                                <td>042</td>
+                                <td>Caderno Universitário 100 Folhas</td>
+                                <td><span class="status-badge success">Entrada</span></td>
+                                <td>30</td>
+                                <td>R$ 12,90</td>
+                                <td>R$ 387,00</td>
+                                <td>Fabrisio</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                            <tr class="exit-row">
+                                <td>14/04/2025</td>
+                                <td>001</td>
+                                <td>Caneta Esferográfica Azul</td>
+                                <td><span class="status-badge danger">Saída</span></td>
+                                <td>15</td>
+                                <td>R$ 1,50</td>
+                                <td>R$ 22,50</td>
+                                <td>Fabrisio</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                            <tr class="entry-row">
+                                <td>13/04/2025</td>
+                                <td>078</td>
+                                <td>Lápis HB nº2</td>
+                                <td><span class="status-badge success">Entrada</span></td>
+                                <td>50</td>
+                                <td>R$ 0,80</td>
+                                <td>R$ 40,00</td>
+                                <td>Maria</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                            <tr class="exit-row">
+                                <td>12/04/2025</td>
+                                <td>042</td>
+                                <td>Caderno Universitário 100 Folhas</td>
+                                <td><span class="status-badge danger">Saída</span></td>
+                                <td>5</td>
+                                <td>R$ 12,90</td>
+                                <td>R$ 64,50</td>
+                                <td>João</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                            <tr class="exit-row">
+                                <td>12/04/2025</td>
+                                <td>012</td>
+                                <td>Borracha Branca</td>
+                                <td><span class="status-badge danger">Saída</span></td>
+                                <td>10</td>
+                                <td>R$ 1,20</td>
+                                <td>R$ 12,00</td>
+                                <td>Maria</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                            <tr class="entry-row">
+                                <td>11/04/2025</td>
+                                <td>023</td>
+                                <td>Caixa de Grampos 26/6</td>
+                                <td><span class="status-badge success">Entrada</span></td>
+                                <td>20</td>
+                                <td>R$ 5,50</td>
+                                <td>R$ 110,00</td>
+                                <td>Fabrisio</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                            <tr class="entry-row">
+                                <td>10/04/2025</td>
+                                <td>035</td>
+                                <td>Agenda 2025</td>
+                                <td><span class="status-badge success">Entrada</span></td>
+                                <td>15</td>
+                                <td>R$ 24,90</td>
+                                <td>R$ 373,50</td>
+                                <td>João</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                            <tr class="exit-row">
+                                <td>10/04/2025</td>
+                                <td>078</td>
+                                <td>Lápis HB nº2</td>
+                                <td><span class="status-badge danger">Saída</span></td>
+                                <td>25</td>
+                                <td>R$ 0,80</td>
+                                <td>R$ 20,00</td>
+                                <td>Maria</td>
+                                <td>
+                                    <button class="action-btn view-btn">Ver</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button class="pagination-btn prev-btn">Anterior</button>
+                    <div class="page-numbers">
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number">3</button>
+                        <span class="page-ellipsis">...</span>
+                        <button class="page-number">12</button>
+                    </div>
+                    <button class="pagination-btn next-btn">Próximo</button>
+                </div>
+            </div>
+            
+            <!-- Modal para Nova Entrada/Saída -->
+            <div id="movement-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Nova Entrada</h3>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="movement-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="modal-product">Produto</label>
+                                    <div class="search-input">
+                                        <input type="text" id="modal-product" class="form-input" placeholder="Buscar produto...">
+                                        <button type="button" class="search-btn">Buscar</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="modal-quantity">Quantidade</label>
+                                    <input type="number" id="modal-quantity" class="form-input" min="1">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="modal-price">Valor Unitário</label>
+                                    <input type="text" id="modal-price" class="form-input" placeholder="R$ 0,00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="modal-date">Data</label>
+                                    <input type="date" id="modal-date" class="form-input">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="modal-notes">Observações</label>
+                                    <textarea id="modal-notes" class="form-input" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="button gray-bg cancel-btn">Cancelar</button>
+                                <button type="submit" class="button blue-bg">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
