@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.login-container {
+    flex: 1;
+    padding: 2rem 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .login-container {
+        max-width: 50%;
+    }
+}
+
+.logo-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.lock-icon {
+    margin-right: 8px;
+    color: #333;
+}
+
+.ambiente-seguro {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    color: #111;
+}
+
+form {
+    width: 100%;
+    max-width: 360px;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-weight: 400;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: transparent;
+}
+
+input:focus {
+    border-color: #0080ff;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    padding: 0.25rem;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.85rem;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2.5rem;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.login-button:hover {
+    background-color: #0069d9;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: left;
+}
+
+.brand-side {
+    display: none;
+    background-color: #007bff;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .brand-side {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.brand-side .logo {
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+.brand-side .shapes {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.brand-side .shape {
+    position: absolute;
+    background-color: #4d29ff;
+    border-radius: 50% 50% 0 50%;
+}
+
+.brand-side .shape:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+}
+
+.brand-side .shape:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    right: 10%;
+}
+
+.brand-side .shape:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    bottom: 25%;
+    right: 5%;
+}
+
+.brand-side .shape:nth-child(4) {
+    width: 350px;
+    height: 350px;
+    bottom: -150px;
+    right: -150px;
+}
+
+/* Small screen adjustments */
+@media (max-width: 767px) {
+    .login-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    form {
+        max-width: 100%;
+    }
+}
+
+/* Medium screen adjustments */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .login-container {
+        padding: 2rem 3rem;
+    }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1200px) {
+    .login-container {
+        padding: 2rem 6rem;
+    }
+}
+
+/* Make sure the form stays centered */
+@media (min-height: 800px) {
+    .login-container {
+        justify-content: center;
+    }
+}
+
+@media (max-height: 799px) {
+    .login-container {
+        justify-content: flex-start;
+        padding-top: 4rem;
+    }
+}
