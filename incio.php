@@ -162,5 +162,6 @@ include('protect.php');
             </div>
         </main>
     </div>
+    <script src="Login.js"></script>
 </body>
 </html>
