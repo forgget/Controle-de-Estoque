@@ -1,3 +1,7 @@
+<?php
+include('protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -78,7 +82,7 @@
         <!-- Main Content -->
         <main class="content">
             <div class="welcome-section">
-                <h1>Bom dia, Fabrisio</h1>
+                <h1>Bom dia, <?php echo $_SESSION['nome']; ?></h1>
             </div>
             
             <!-- Cards de estatísticas principais -->
