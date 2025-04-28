@@ -1,0 +1,335 @@
+/* Estilos específicos para a página de produtos cadastrados */
+
+/* Estilos do container de produtos */
+.products-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+/* Cabeçalho da seção de produtos */
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Estilos da caixa de busca e filtros */
+.search-filter {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 300px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    padding: 0 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box button svg {
+    width: 18px;
+    height: 18px;
+    color: #666;
+}
+
+.filter-options {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-options select {
+    padding: 8px 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    outline: none;
+}
+
+/* Estilos dos botões de ação */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.blue-button, .green-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.blue-button {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.blue-button:hover {
+    background-color: #2563eb;
+}
+
+.green-button {
+    background-color: #10b981;
+    color: white;
+}
+
+.green-button:hover {
+    background-color: #059669;
+}
+
+.action-buttons svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Tabela de produtos */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.products-table th,
+.products-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.products-table th {
+    background-color: #f8f8f8;
+    font-weight: 600;
+    color: #666;
+    position: sticky;
+    top: 0;
+}
+
+.products-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Status badges para diferentes estados de estoque */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.danger {
+    background-color: #ffecec;
+    color: #e53935;
+}
+
+.status-badge.warning {
+    background-color: #fff8e6;
+    color: #f9a825;
+}
+
+.status-badge.success {
+    background-color: #ecf8f0;
+    color: #43a047;
+}
+
+/* Botões de ação na tabela */
+.table-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    margin-right: 5px;
+    transition: background-color 0.2s;
+}
+
+.table-action-btn:hover {
+    background-color: #f2f2f2;
+}
+
+.table-action-btn svg {
+    width: 16px;
+    height: 16px;
+    color: #666;
+}
+
+.edit-btn svg {
+    color: #3b82f6;
+}
+
+.delete-btn svg {
+    color: #ef4444;
+}
+
+.view-btn svg {
+    color: #10b981;
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #f2f2f2;
+}
+
+.pagination button svg {
+    width: 16px;
+    height: 16px;
+}
+
+#pageNumbers {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#pageNumbers span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#pageNumbers span:hover:not(.current-page) {
+    background-color: #f2f2f2;
+}
+
+#pageNumbers span.current-page {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Checkbox customizado */
+.products-table input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .products-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-filter {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .action-buttons {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .filter-options {
+        width: 100%;
+    }
+    
+    .filter-options select {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-table th:nth-child(4),
+    .products-table td:nth-child(4),
+    .products-table th:nth-child(7),
+    .products-table td:nth-child(7) {
+        display: none;
+    }
+    
+    .action-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .blue-button, .green-button {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-table th:nth-child(3),
+    .products-table td:nth-child(3) {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .products-table th:nth-child(5),
+    .products-table td:nth-child(5) {
+        display: none;
+    }
+}
