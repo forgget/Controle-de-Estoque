@@ -85,7 +85,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
                 ?>
                 <button type="submit" class="login-button">Entrar</button>
             
-            <a href="#" class="forgot-password">Esqueci minha senha</a>
+            <a href="forgget-passworld.php" class="forgot-password">Esqueci minha senha</a>
         </form>
     </div>
     
